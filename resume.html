@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>钟占达的简历</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <script src="./js/base.js"></script>
+    <script>
+      window.onload = function () {
+        let oWrap = $(".wrap"),
+            resume = $(".resume"),
+            funcCon = $(".func"),
+            scale = 1,
+            oT = 0,
+            oL = 0,
+            rL = resume.offsetLeft;
+        let zoomIn = funcCon.$(".zoom-in"),
+            zoomOut = funcCon.$(".zoom-out"),
+            revert = funcCon.$(".revert"),
+            _2w = funcCon.$(".width"),
+            _2h = funcCon.$(".height");
+        funcCon.onclick = function (e) {
+          console.log(e.target);
+          if (e.target.hasClass("zoom-in")) {
+            scale += 0.1;
+          } else if (e.target.hasClass("zoom-out")) {
+            scale -= 0.1; 
+          } else if (e.target.hasClass("width")) {
+            scale = window.innerWidth / 840;
+          } else if (e.target.hasClass("height")) {
+            scale = window.innerHeight / 1188;
+          } else if (e.target.hasClass("revert")) {
+            scale = 1;
+          }
+          (scale < 0.3) && (scale = 0.3);
+          (scale > 2) && (scale = 2);
+          oT = 1188 * (scale - 1) / 2;
+          // (oT < 0) && (oT = 0);
+          oL = 840 * (scale - 1) / 2 - rL;
+          (oL < 0) && (oL = 0);
+          resume.style.transform = `scale(${scale})`;
+          oWrap.style.marginTop = oT + "px";
+          oWrap.style.marginLeft = oL + "px";
+        };
+      };
+    </script>
+    <style>
+      html {
+        color: #4f4f4f;
+        background: #1c1c1c;
+      }
+      body {
+        font-size: 14px;
+      }
+      h1, h2 {
+        color: #00688b;
+      }
+      h2 {
+        font-size: 28px;
+        line-height: 38px;
+      }
+      .left-section h2 {
+        padding-bottom: 10px;
+      }
+      .right-section h2 {
+        border-bottom: 2px solid #00688b;
+      }
+      h3 {
+        color: #000;
+      }
+
+      .small-section {
+        margin-top: 16px;
+      }
+
+      div.wrap {
+        transition: margin 500ms ease-in-out;
+      }
+
+      div.resume {
+        margin: auto;
+        width: 840px;
+        height: 1188px;
+        background: #fcfcfc;
+        transition: transform 500ms ease-in-out;
+      }
+      div.resume {
+        position: relative;
+      }
+      div.resume::before,
+      div.resume::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        background: #00688b;
+      }
+      div.resume::after {
+        bottom: 0;
+      }
+
+
+      div.left,
+      div.right {
+        position: absolute;
+        top: 0;
+        padding: 100px 20px 0 ;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      div.left {
+        left: 0;
+        border-right: 2px solid #00688b;
+        width: 260px;
+      }
+      div.right {
+        right: 0;
+        border-left: 2px solid #00688b;
+        width: 580px;
+      }
+      div.left::before,
+      div.right::before {
+        content: "";
+        display: block;
+        position: absolute;
+        border: 20px solid transparent;
+      }
+      div.left::before {
+        right: -22px;
+        top: 48px;
+        border-top: 40px solid #00688b;
+      }
+      div.right:before {
+        left: -22px;
+        bottom: 48px;
+        border-bottom: 40px solid #00688b;
+      }
+
+
+      .left-section {
+        border-top: 2px solid #dedede;
+        padding: 40px 0;
+        text-align: right;
+      }
+      h1.resume {
+        padding-top: 0;
+        margin-right: -30px;
+        border-top: 0;
+        line-height: 80px;
+        font-size: 80px;
+        letter-spacing: 30px;
+        text-align: center;
+      }
+      div.avatar {
+        position: relative;
+        margin: 50px auto;
+        border-top: 0;
+        border-radius: 50%;
+        padding: 0;
+        width: 160px;
+        height: 160px;
+        overflow: hidden;
+      }
+      div.avatar img {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 160px;
+        transform: translate(-50%, -50%);
+      }
+
+      .right-section {
+        position: relative;
+        margin-bottom: 50px;
+      }
+      .right-section h2 {
+        margin-left: 50px;
+      }
+
+      .right-section .icon {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        border: 2px solid #00688b;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #00688b;
+      }
+      i.fa {
+        vertical-align: middle;
+        font-size: 20px;
+      }
+      div.experience {
+        display: flex;
+        color: #000;
+      }
+      div.experience h3 {
+        flex: 1;
+      }
+      div.experience span:first-child {
+        text-align: left;
+      }
+      div.experience h3 {
+        text-align: center;
+      }
+      div.experience span:last-child {
+        text-align: right;
+      }
+      .work-content dd {
+        text-indent: 2em;
+      }
+      .work-content li {
+        list-style: disc;
+      }
+
+      div.func {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: -50px;
+        margin: auto;
+        padding: 6px;
+        width: 50px;
+        height: 230px;
+        background: #000;
+        transition: left 500ms ease-in-out;
+      }
+      div.resume:hover + div.func {
+        left: 0;
+      }
+      div.func:hover {
+        left: 0;
+      }
+      div.func > div {
+        cursor: pointer;
+        position: relative;
+        margin: 5px auto;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
+      div.func i.fa {
+        vertical-align: middle;
+        font-size: 20px;
+        color: #fff;
+      }
+      div.func > div::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="resume">
+        <div class="left">
+          <h1 class="resume section left-section"><span>简历</span></h1>
+          <div class="avatar section left-section">
+            <img src="./images/xiaoxin.jpg" alt="小心超人"/>
+          </div>
+          <div class="intent section left-section">
+            <h2 class="intent">意向岗位</h2>
+            <span>WEB 前端开发工程师</span>
+          </div>
+          <div class="basic-info section left-section">
+            <h2 class="basic-info">基本信息</h2>
+            <div class="small-section name">
+              <h3 class="name">姓名</h3>
+              <span class="name">钟占达</span>
+            </div>
+            <div class="small-section age">
+              <h3 class="age">年龄</h3>
+              <span class="age">1995.01.27</span>
+            </div>
+            <div class="small-section hometown">
+              <h3 class="hometown">籍贯</h3>
+              <span>江苏宜兴</span>
+            </div>
+            <div class="small-section education">
+              <h3 class="education">学历</h3>
+              <span class="education">本科</span>
+            </div>
+            <div class="small-section phone">
+              <h3 class="phone">电话</h3>
+              <span class="phone">+86 18911477662</span>
+            </div>
+            <div class="small-section e-mail">
+              <h3 class="e-mail">邮箱</h3>
+              <span class="e-mail">zhongzhanda@live.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="education-background section right-section">
+            <div class="icon"><i class="fa fa-graduation-cap"></i></div>
+            <h2 class="education-background">教育背景</h2>
+            <div class="small-section experience specific-info">
+              <span class="time">2013.09 - 2017.06</span>
+              <h3 class="school">中国药科大学</h3>
+              <span class="department">海洋药学 | 本科</span>
+            </div>
+          </div>
+          <div class="skill section right-section">
+            <div class="icon"><i class="fa fa-database"></i></div>
+            <h2 class="skill">技能特长</h2>
+            <div class="small-section familiar">
+              <h3 class="familiar">熟悉</h3>
+              <p>
+                <span>HTML</span>, 
+                <span>CSS</span>, 
+                <span>CSS3</span>, 
+                <span>JavaScript(ES5)</span>, 
+                以及部分<span>HTML5</span>。
+              </p>
+            </div>
+            <div class="small-section grasp">
+              <h3 class="grasp">学习中</h3>
+              <p>
+                <span>ES6</span>, 
+                <span>TypeScript</span>, 
+                <span>Sass</span>, 
+                <span>git</span>。
+              </p>
+            </div>
+            <div class="small-section part-find-out">
+              <h3 class="part-find-out">下阶段准备学习</h3>
+              <p>
+                <span>IE兼容性问题</span>，
+                <span>jQuery源码</span>，
+                <span>Vue框架</span>，
+                <span>算法</span>。
+              </p>
+            </div>
+            <div class="small-section part-find-out">
+              <h3 class="part-find-out">其它待补充知识</h3>
+              <p>
+                <span>计算机网络</span>，
+                <span>操作系统</span>，
+                <span>计算机组成原理</span>，
+                <span>编译原理</span>等。
+              </p>
+            </div>
+          </div>
+          <div class="section right-section work">
+            <div class="icon"><i class="fa fa-briefcase"></i></div>
+            <h2 class="work">工作经历</h2>
+            <div class="small-section experience work-info">
+              <span class="time">2017.03 - 2018.02</span>
+              <h3 class="company">南京普瑞特生物科技有限公司</h3>
+              <span class="position">检测员</span>
+            </div>
+            <div class="work-content">
+              <dl class="work-description">
+                <dt>工作描述</dt>
+                <dd>南京普瑞特生物科技有限公司是一家以研发生物酶为主的生物技术公司，相比传统化工生产，通过生物酶生产产品具备节能、高效、清洁等优点。</dd>
+                <dd>通过对特定 DNA 进行随机突变或对 DNA 指定位点进行基因编辑，以产生新的生物酶，并对新生成的酶进行测试，从中筛选活性更高的生物酶。</dd>
+                <dd>
+                  <p>本人负责的内容</p>
+                  <ul>
+                    <li>初步制定并优化生物酶反应条件，包括：反应的温度、酸碱度，原料的浓度，原料分次添加的时间，反应时间等。</li>
+                    <li>初步筛选活性更高的生物酶。</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="func">
+        <div class="zoom-in"><i class="fa fa-search-plus"></i></div>
+        <div class="zoom-out"><i class="fa fa-search-minus"></i></div>
+        <div class="width"><i class="fa fa-arrows-h"></i></div>
+        <div class="height"><i class="fa fa-arrows-v"></i></div>
+        <div class="revert"><i class="fa fa-refresh"></i></div>
+      </div>
+    </div>
+  </body>
+</html>

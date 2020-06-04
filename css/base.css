@@ -1,0 +1,100 @@
+/*格式化margin和padding*/
+html, body, div, p, ol, ul, li, h1, h2, h3, h4, h5, h6, pre, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+body, button, input, select, textarea, a {
+  font: 16px/1.5 sans-serif, arial;
+}
+
+em {
+  font-style: normal;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input, button {
+  padding: 0;
+  border: none;
+} 
+
+/* 清除浮动
+ * 防止垂直外边距合并
+ */
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+
+
+/*---小三角箭头，会有旋转效果---*/
+.triangle {
+  position: relative;
+}
+.triangle::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 6px;
+  border: 3px solid transparent;
+  border-top-color: #999;
+}
+.triangle:hover::after {
+  transform: rotate(180deg);
+  transform-origin: 50% 30%;
+  transition: transform .2s ease-in;
+}
+/*---小三角结束---*/
+
+/*---代码显示框---*/
+.code {
+  margin: 20px 10px;
+  border: 1px dotted #666;
+  padding: 40px 0 0;
+}
+.code::before {
+  content: "";
+  opacity: 0;
+  float: left;
+  margin-top: -30px;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 16px;
+  color: #fff;
+  background: grey;
+  transition: opacity .5s ease-in;
+}
+.code:hover::before {
+  opacity: .8;
+  transition: opacity .5s ease-out;
+}
+.code.css::before {
+  content: "CSS";
+}
+/*---代码显示框结束---*/
