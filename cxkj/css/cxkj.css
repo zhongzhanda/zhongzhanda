@@ -3,10 +3,15 @@ html, body, div, p, h1, h2, h3, h4, h5, h6, ul, li, dl, dt, dd {
   margin: 0;
   padding: 0;}
 
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", Arial, Arial, Helvetica, sans-serif, 'Courier New', Courier, monospace;
+}
+
 li {
   list-style: none;}
 
 a {
+    outline: none;
     text-decoration: none;}
 
 
@@ -23,9 +28,9 @@ a.anchor {
 .title {
   padding: 126px 0 90px;}
   .title h2 {     /**标题**/
-    line-height: 46px;
+    line-height: 48px;
     text-align: center;
-    font-size: 46px;}
+    font-size: 48px;}
   .title p.split {    /**标题下划线**/
     height: 42px;
     line-height: 42px;
@@ -42,7 +47,7 @@ a.anchor {
   margin: 0 auto;
   width: auto;
   max-width: 1920px;
-  min-width: 1460px;}
+  min-width: 1471px;}
 
 /**首页**/
 .home {
@@ -72,11 +77,11 @@ a.anchor {
           color: #f00;}
           .home .nav-item dt {
             line-height: 30px;
+            font-weight: bold;
             font-size: 30px;}
          .home .nav-item dd {
             margin: 40px 0 0;
-            line-height: 14px;
-            font-size: 14px;}
+            font: bold 18px/1 Arial, sans-serif, monospace;}
   /**标语**/
   .slogan {
     display: block;
@@ -93,7 +98,6 @@ a.anchor {
       line-height: 44px;
       vertical-align: middle;
       font-size: 36px;
-      font-weight: lighter;
       color: #fff;}
     .manage-item:last-child {
       border-right: none;}
@@ -128,7 +132,7 @@ a.anchor {
       width: 184px;
       height: 44px;
       line-height: 44px;
-      font-size: 18px;
+      font-size: 20px;
       color: #f00;
       text-align: center;}
 
@@ -162,10 +166,10 @@ a.anchor {
           height: 30px;
           line-height: 30px;
           text-align: center;}
-        .service p.split {
+        .service .mask p.split {
           height: 32px;
           text-align: center;}
-          .service p.split span {
+          .service .mask p.split span {
             display: inline-block;
             width: 50px;
             height: 2px;
@@ -174,9 +178,9 @@ a.anchor {
       .service dl {     /**服务项目简单介绍部分**/
         padding: 70px 60px 48px;}
         .service dt {
-          height: 34px;
-          line-height: 34px;
-          font-size: 34px;}
+          height: 36px;
+          line-height: 36px;
+          font-size: 36px;}
         .service dd {
           height: 40px;
           line-height: 40px;
@@ -201,9 +205,9 @@ a.anchor {
     color: #fff;}
     .user h2 {
       padding-top: 110px;
-      height: 46px;
-      line-height: 46px;
-      font-size: 46px;
+      height: 48px;
+      line-height: 48px;
+      font-size: 48px;
       text-align: center;}
     .user ul {
       display: flex;
@@ -218,9 +222,10 @@ a.anchor {
             text-align: center;}
           .user dd {
             padding-top: 32px;
-            height: 34px;
-            line-height: 34px;
-            font-size: 48px; 
+            height: 45px;
+            line-height: 45px;
+            font-weight: bold;
+            font-size: 45px; 
             text-align: center;}
 
 /**案例展示**/
@@ -269,8 +274,6 @@ a.anchor {
       opacity: 1;
       transform: translateX(0) scale(1);
       transition: all 500ms ease-out;}
-      /* transition: opacity 1000ms ease-in-out,
-                  transform 1000ms ease-in-out;} */
     .case .carousel .img.p2 {       /**中间的图片显示在所有图片上方**/
       z-index: 2;}
     .case .carousel .img.p1 {       /**左边的图片位于左边，并且缩小，变透明。**/
@@ -354,6 +357,7 @@ a.anchor {
       .recruit .position h3 {
         height: 46px;
         line-height: 46px;
+        font-weight: bold;
         font-size: 22px;
         vertical-align: middle;}
       .recruit .position p {
@@ -372,15 +376,16 @@ a.anchor {
     color: #fff;}
     .recruit .mask h3 {
       padding-top: 44px;
-      height: 28px;
-      line-height: 28px;
-      font-size: 28px;
+      height: 30px;
+      line-height: 30px;
+      font-weight: bold;
+      font-size: 30px;
       vertical-align: middle;}
     .recruit .mask p {
       padding-top: 40px;
-      height: 20px;
-      line-height: 20px;
-      font-size: 20px;
+      height: 22px;
+      line-height: 22px;
+      font-size: 22px;
       vertical-align: middle;}
 
 /**联系我们**/
@@ -406,19 +411,20 @@ a.anchor {
         padding-left: 46px;}
       /**联系电话**/
       .contact .details .phone {
-        border-left-color: #f00;
-        font-size: 18px;}
-        .contact .details .phone dt,
+        border-left-color: #f00;}
+        .contact .details .phone dt {
+          height: 16px;
+          line-height: 16px;
+          font-size: 16px;}
         .contact .details .phone dd {
           height: 18px;
           line-height: 18px;
+          font-size: 18px;
           vertical-align: center;}
         .contact .details .phone .phone-number {
           height: 72px;
           line-height: 72px;
-          font-size: 48px;
-          font-weight: bolder;
-          vertical-align: baseline;}
+          font: bolder 48px/1.5 Arial, sans-serif, monospace;}
       /**导航**/
       .contact .nav li {
         display: inline-block;
