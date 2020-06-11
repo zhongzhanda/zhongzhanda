@@ -40,14 +40,17 @@ a.anchor {
 /**网页整体容器**/
 .content {
   margin: 0 auto;
-  width: 1920px;}
+  width: auto;
+  max-width: 1920px;
+  min-width: 1460px;}
 
 /**首页**/
 .home {
   position: relative;
   width: 100%;
   height: 1080px;
-  background: url("../images/homepage.png") center center no-repeat;}
+  background: url("../images/homepage.png") center top no-repeat;
+  background-size: cover;}
   /**头部**/
   .header {
     padding: 80px 48px;}
@@ -385,10 +388,12 @@ a.anchor {
   height: 600px;
   background: url("../images/footer.png") center center no-repeat;}
   .contact .mask {
-    display: flex;
-    padding: 109px 360px 123px;
-    height: 368px;
+    padding: 109px 0 123px;
     background: rgba(0, 0, 0, .5);}
+    .contact .wrap {
+      display: flex;
+      height: 368px;
+  }
     /**联系方式**/
     .contact .details {
       flex: 1;
