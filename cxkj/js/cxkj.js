@@ -72,7 +72,3 @@ _3DCarousel.prototype = {
     }
   },
 };
-window.onload = function () {
-  let carousel = document.querySelector(".carousel");
-  new _3DCarousel(carousel);
-};
