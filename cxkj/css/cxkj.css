@@ -438,6 +438,9 @@ a.anchor {
       border: 1px solid #fff;
       padding: 0 47px;
       width: 184px;}
+      .contact .qrcode div {
+        height: 184px;
+      }
       .contact .qrcode p {
         height: 24px;
         line-height: 24px;
