@@ -14,6 +14,19 @@ a {
     outline: none;
     text-decoration: none;}
 
+img {
+  border: none;}
+
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
 
 /**内容居中显示**/
 .wrap {
@@ -120,13 +133,29 @@ a.anchor {
       text-indent: 2em;
       font-size: 24px;}
     .about .piclist {
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-justify-content: space-between;
       justify-content: space-between;
-      padding: 54px 0 80px;}
+	  display: block\0;
+      padding: 54px 0 80px 0;}
+	  .about .piclist li {
+		float: left\0;
+		margin-right: 7px\0;
+	  }
+	  .about .piclist li:last-child {
+		margin-right: 0\0;
+	  }
       .about .piclist img {
+	    display: 
         vertical-align: middle;}
+	.about p.know-more {
+	  text-indent: 0;
+	  text-align: center;}
     .about a.know-more {
-      display: block;
+      display: inline-block;
       margin: 0 auto;
       border: 2px solid #f00;
       width: 184px;
@@ -142,13 +171,22 @@ a.anchor {
   .service .h2 {      /**调整标题**/
     padding-bottom: 140px;}
   /**服务项目列表**/
-  .service .service-list {    
+  .service .service-list {
+    display: -ms-flexbox;    
     display: flex;
+	display: block\0;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-justify-content: space-between;
     justify-content: space-between;
+    -ms-align-content: space-between;
     align-content: space-between;}
     .service li {
+	  float: left\0;
+	  margin-bottom: 60px\0;
       position: relative;}
+	.service li:nth-child(odd) {
+	  margin-right: 60px\0;}
       .service .mask {    /**蒙版**/
         display: none;
         position: absolute;
@@ -210,10 +248,14 @@ a.anchor {
       font-size: 48px;
       text-align: center;}
     .user ul {
+      display: -ms-flexbox;
       display: flex;
+	  display: block\0;
+      -ms-justify-content: space-between;
       justify-content: space-between;
       padding-top: 160px;}
       .user li {
+	    float: left\0;
         padding: 0 130px;}
           .user dt {
             height: 30px;
@@ -270,18 +312,19 @@ a.anchor {
       margin: auto;
       width: 757px;
       height: 429px;
-      z-index: 1;
       opacity: 1;
       transform: translateX(0) scale(1);
       transition: all 500ms ease-out;}
     .case .carousel .img.p2 {       /**中间的图片显示在所有图片上方**/
-      z-index: 2;}
+      z-index: 3;}
     .case .carousel .img.p1 {       /**左边的图片位于左边，并且缩小，变透明。**/
-      transform: translateX(-226px) scale(0.8);
+      z-index: 1;
+	  transform: translateX(-226px) scale(0.8);
       transform-origin: left center;
       opacity: 0.7;}
     .case .carousel .img.p3 {       /**右边的图片与左边的图片类似**/
-      transform: translateX(226px) scale(0.8);
+      z-index: 2;
+	  transform: translateX(226px) scale(0.8);
       transform-origin: right center;
       opacity: 0.7;}
       .case .carousel .img img {
@@ -296,7 +339,7 @@ a.anchor {
       box-shadow: 0 1px 1px #eee;
       width: 462px;
       height: 102px;
-      z-index: 3;
+      z-index: 4;
       background: #fff;}
       .case .carousel-title ul {
         height: 102px;}
@@ -320,7 +363,7 @@ a.anchor {
     .case .dirl,
     .case .dirr {
       position: absolute;
-      z-index: 3;
+      z-index: 4;
       left: 0;
       right: 0;
       top: 0;
@@ -396,14 +439,22 @@ a.anchor {
     padding: 109px 0 123px;
     background: rgba(0, 0, 0, .5);}
     .contact .wrap {
+      display: -ms-flexbox;
       display: flex;
+	  display: block\0;
       height: 368px;
   }
     /**联系方式**/
     .contact .details {
+      -ms-flex: 1;
       flex: 1;
+      display: -ms-flexbox;
       display: flex;
+	  display: block\0;
+	  float: left\0;
+      -ms-flex-direction: column;
       flex-direction: column;
+      -ms-justify-content: space-between;
       justify-content: space-between;
       color: #fff;}
       .contact .details > * {
@@ -411,6 +462,7 @@ a.anchor {
         padding-left: 46px;}
       /**联系电话**/
       .contact .details .phone {
+	    margin-bottom: 82px\0;
         border-left-color: #f00;}
         .contact .details .phone dt {
           height: 16px;
@@ -426,6 +478,8 @@ a.anchor {
           line-height: 72px;
           font: bolder 48px/1.5 Arial, sans-serif, monospace;}
       /**导航**/
+	  .contact .nav {
+	    margin-bottom: 82px\0;}
       .contact .nav li {
         display: inline-block;
         margin-right: 36px;
@@ -443,15 +497,21 @@ a.anchor {
         vertical-align: middle;}
     /**二维码部分**/
     .contact .qrcode {
+      display: -ms-flexbox;
       display: flex;
+	  display: block\0;
+	  float: right\0;
+      -ms-flex-direction: column;
       flex-direction: column;
-      justify-content: space-evenly;
+      -ms-justify-content: space-betwen;
+      justify-content: space-between;
       border: 1px solid #fff;
-      padding: 0 47px;
-      width: 184px;}
+      padding: 52px 47px;
+      width: 184px;
+	  height: 264px\0;}
       .contact .qrcode div {
         height: 184px;
-      }
+        margin-bottom: 56px\0;}
       .contact .qrcode p {
         height: 24px;
         line-height: 24px;
